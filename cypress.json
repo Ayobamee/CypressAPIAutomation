@@ -1,0 +1,17 @@
+{
+  "chromeWebSecurity": false,
+  "projectId": "pcrtom",
+  "reporter": "mochawesome",
+  "retries": {
+    "runMode": 2,
+    "openMode": 1
+  },
+  "env": {
+    "username": "ay@mail.com",
+    "password": "pass1234"
+  },
+  "baseUrl": "http://tawdry-rule.surge.sh/",
+
+  "defaultCommandTimeout": 30000,
+  "pageLoadTimeout": 50000
+}
