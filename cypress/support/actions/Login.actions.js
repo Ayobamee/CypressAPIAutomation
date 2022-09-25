@@ -1,4 +1,6 @@
 Cypress.Commands.add("Login", () => {
+  const username = Cypress.env("username");
+  const password = Cypress.env("password");
   //Load test env
   cy.visit("/");
 
@@ -6,10 +8,10 @@ Cypress.Commands.add("Login", () => {
   cy.SignBtn().click();
 
   //Enter username
-  cy.userNameField().type(Cypress.env("username"));
+  cy.userNameField().type(username);
 
   //Enter password
-  cy.passwordField().type(Cypress.env("password"));
+  cy.passwordField().type(password);
   //click login
   cy.loginBtn().click();
 });

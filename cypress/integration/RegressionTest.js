@@ -18,7 +18,7 @@ describe("Quales Course Management Regression Test suite", () => {
     });
   });
 
-  context("Out of app  tests", () => {
+  context("Tear Down", () => {
     it("Validate that users can logout of the app successfully", () => {
       //Test successful logout
       cy.checkLogout({});
