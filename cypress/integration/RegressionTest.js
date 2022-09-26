@@ -6,7 +6,7 @@ describe("Quales Course Management Regression Test suite", () => {
     cy.Login({});
   });
 
-  context("In app tests", () => {
+  context("Tests after login", () => {
     it("Validate that users with valid credentials can login to the app successfully", () => {
       //Test successful login
       cy.checksuccessfulLoginMessage({});
