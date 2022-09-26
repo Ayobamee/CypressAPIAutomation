@@ -22,3 +22,5 @@ Cypress.Commands.add("loginBtn", () => {
 Cypress.Commands.add("checksuccessfulLoginMessage", () => {
   cy.get(".Toastify__toast-body > :nth-child(2)");
 });
+
+
