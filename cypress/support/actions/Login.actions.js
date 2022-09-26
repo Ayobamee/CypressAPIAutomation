@@ -4,6 +4,9 @@ Cypress.Commands.add("Login", () => {
   //Load test env
   cy.visit("/");
 
+  //Confirm site renders
+  cy.assertAppLoads().should("be.visible");
+
   //Click Sign Button
   cy.SignBtn().click();
 

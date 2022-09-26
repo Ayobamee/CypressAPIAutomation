@@ -1,3 +1,7 @@
+Cypress.Commands.add("assertAppLoads", () => {
+  cy.contains("Training");
+});
+
 Cypress.Commands.add("SignBtn", () => {
   cy.contains("Sign In");
 });

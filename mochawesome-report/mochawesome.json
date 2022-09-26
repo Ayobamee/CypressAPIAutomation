@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2022-09-25T19:36:38.794Z",
-    "end": "2022-09-25T19:37:02.094Z",
-    "duration": 23300,
+    "start": "2022-09-26T10:01:14.440Z",
+    "end": "2022-09-26T10:01:47.314Z",
+    "duration": 32874,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f7c1d9fd-2191-48e8-b6e3-b7c028a850c9",
+      "uuid": "13c04b6c-0ba8-45eb-b879-5a387beef8b5",
       "title": "",
       "fullFile": "cypress/integration/RegressionTest.js",
       "file": "cypress/integration/RegressionTest.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "03f39837-6912-483b-aeab-14960659df5e",
+          "uuid": "0cfed124-7e4c-46c2-a4fd-cffaec55b3ff",
           "title": "Quales Course Management Regression Test suite",
           "fullFile": "",
           "file": "",
@@ -36,8 +36,8 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "45f0d331-e4a5-4fa2-9bf6-55e0bffdc039",
-              "title": "In app tests",
+              "uuid": "2449c350-8a6c-44b1-885e-b0f628603b30",
+              "title": "Tests after login",
               "fullFile": "",
               "file": "",
               "beforeHooks": [],
@@ -45,9 +45,9 @@
               "tests": [
                 {
                   "title": "Validate that users with valid credentials can login to the app successfully",
-                  "fullTitle": "Quales Course Management Regression Test suite In app tests Validate that users with valid credentials can login to the app successfully",
+                  "fullTitle": "Quales Course Management Regression Test suite Tests after login Validate that users with valid credentials can login to the app successfully",
                   "timedOut": null,
-                  "duration": 5374,
+                  "duration": 5853,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -56,16 +56,16 @@
                   "context": null,
                   "code": "//Test successful login\ncy.checksuccessfulLoginMessage({});",
                   "err": {},
-                  "uuid": "88a20478-a2da-46e0-aca1-a9533e4f7d1d",
-                  "parentUUID": "45f0d331-e4a5-4fa2-9bf6-55e0bffdc039",
+                  "uuid": "1c903cba-1296-48ad-810b-159d680f0b1c",
+                  "parentUUID": "2449c350-8a6c-44b1-885e-b0f628603b30",
                   "isHook": false,
                   "skipped": false
                 },
                 {
                   "title": "Validate that courses are displayed successfully",
-                  "fullTitle": "Quales Course Management Regression Test suite In app tests Validate that courses are displayed successfully",
+                  "fullTitle": "Quales Course Management Regression Test suite Tests after login Validate that courses are displayed successfully",
                   "timedOut": null,
-                  "duration": 6784,
+                  "duration": 15762,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -74,27 +74,27 @@
                   "context": null,
                   "code": "//Test courses are listed.\ncy.checkCoursesDisplay({});",
                   "err": {},
-                  "uuid": "f8727dc2-3364-41a4-a419-ee62a5d197f4",
-                  "parentUUID": "45f0d331-e4a5-4fa2-9bf6-55e0bffdc039",
+                  "uuid": "1d8a3f94-e38f-47ba-b83a-cf97ad8a218b",
+                  "parentUUID": "2449c350-8a6c-44b1-885e-b0f628603b30",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "88a20478-a2da-46e0-aca1-a9533e4f7d1d",
-                "f8727dc2-3364-41a4-a419-ee62a5d197f4"
+                "1c903cba-1296-48ad-810b-159d680f0b1c",
+                "1d8a3f94-e38f-47ba-b83a-cf97ad8a218b"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 12158,
+              "duration": 21615,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "d0a99880-ef69-4318-b0d3-2b4c758c7d96",
+              "uuid": "8bc5f923-d4e0-415d-baf8-3e27cb757293",
               "title": "Tear Down",
               "fullFile": "",
               "file": "",
@@ -105,7 +105,7 @@
                   "title": "Validate that users can logout of the app successfully",
                   "fullTitle": "Quales Course Management Regression Test suite Tear Down Validate that users can logout of the app successfully",
                   "timedOut": null,
-                  "duration": 11036,
+                  "duration": 11169,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -114,20 +114,20 @@
                   "context": null,
                   "code": "//Test successful logout\ncy.checkLogout({});",
                   "err": {},
-                  "uuid": "d6d16090-f569-4a68-8e92-d5e703952740",
-                  "parentUUID": "d0a99880-ef69-4318-b0d3-2b4c758c7d96",
+                  "uuid": "5d05d516-c77b-4f90-948a-acfe4fe3d2d9",
+                  "parentUUID": "8bc5f923-d4e0-415d-baf8-3e27cb757293",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d6d16090-f569-4a68-8e92-d5e703952740"
+                "5d05d516-c77b-4f90-948a-acfe4fe3d2d9"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 11036,
+              "duration": 11169,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
