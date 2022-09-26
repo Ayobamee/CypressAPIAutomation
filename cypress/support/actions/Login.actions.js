@@ -10,6 +10,8 @@ Cypress.Commands.add("Login", () => {
   //Click Sign Button
   cy.SignBtn().click();
 
+  //assert login page
+  cy.assertLoginPage();
   //Enter username
   cy.userNameField().type(username);
 
