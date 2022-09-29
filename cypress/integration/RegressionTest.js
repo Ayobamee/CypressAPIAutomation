@@ -12,7 +12,7 @@ describe("Quales Course Management Regression API Test suite", () => {
     return result;
   };
   let courseId = "";
-  it("Create a particular Course", () => {
+  it("Create a Course", () => {
     cy.request({
       method: "POST",
       url: "/" + "/api/courses/",
@@ -36,7 +36,7 @@ describe("Quales Course Management Regression API Test suite", () => {
     });
   });
 
-  it("Get a particular Course", () => {
+  it("Get a  Course", () => {
     cy.request({
       method: "GET",
       url: "/" + "/api/courses/" + courseId,
