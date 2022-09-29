@@ -1,13 +1,23 @@
 /// <reference types= "cypress" />
 
 describe("Quales Course Management Regression API Test suite", () => {
+  const randomChar = (length) => {
+    let result = "";
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  };
   let courseId = "";
   it("Create a particular Course", () => {
     cy.request({
       method: "POST",
       url: "/" + "/api/courses/",
       body: {
-        title: "Cypress Course",
+        title: "Course Automation" + randomChar(4),
         categoryId: 2,
         description: "Testing Cypress course",
         courseUrl: "https://www.youtube.com/watch?v=8vXoMqWgbQQ",
