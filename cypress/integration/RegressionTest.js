@@ -39,18 +39,18 @@ describe("Quales Course Management Regression API Test suite", () => {
     });
   });
 
-  it("Delete created ourse", () => {
+  it("Delete a created course", () => {
     cy.request({
       method: "DELETE",
       url: "/" + "/api/courses/" + courseId,
-    }).as("deleteCourseRequest");
+    }).as("deleteACourseRequest");
     cy.get("@deleteCourseRequest").then((res) => {
       cy.log(JSON.stringify(res.body));
       expect(res.status).to.eq(204);
     });
   });
 
-  it("Get All Courses", () => {
+  it("Get all courses", () => {
     cy.request({
       method: "GET",
       url: "/" + "/api/courses",
