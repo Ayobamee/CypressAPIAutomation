@@ -1,32 +1,7 @@
 /// <reference types= "cypress" />
 
 describe("Quales Course Management Regression API Test suite", () => {
-  it("Get All Courses", () => {
-    cy.request({
-      method: "GET",
-      url: "/" + "/api/courses",
-    }).as("searchAllCoursesRequest");
-    cy.get("@searchAllCoursesRequest").then((res) => {
-      cy.log(JSON.stringify(res.body));
-      expect(res.status).to.eq(200);
-      expect(res.body.data[0]).to.have.property("id");
-      expect(res.body.data[0]).to.have.property("title");
-    });
-  });
-
-  it("Get a particular Course", () => {
-    cy.request({
-      method: "GET",
-      url: "/" + "/api/courses/139",
-    }).as("searchACourseRequest");
-    cy.get("@searchACourseRequest").then((res) => {
-      cy.log(JSON.stringify(res.body));
-      expect(res.status).to.eq(200);
-      expect(res.body).to.have.property("id");
-      expect(res.body).to.have.property("title");
-    });
-  });
-
+  let courseId = "";
   it("Create a particular Course", () => {
     cy.request({
       method: "POST",
@@ -44,8 +19,47 @@ describe("Quales Course Management Regression API Test suite", () => {
     cy.get("@createACourseRequest").then((res) => {
       cy.log(JSON.stringify(res.body));
       expect(res.status).to.eq(200);
+      courseId = res.body.id;
+      cy.log(JSON.stringify(courseId));
       expect(res.body).to.have.property("id");
       expect(res.body).to.have.property("title");
+    });
+  });
+
+  it("Get a particular Course", () => {
+    cy.request({
+      method: "GET",
+      url: "/" + "/api/courses/" + courseId,
+    }).as("searchACourseRequest");
+    cy.get("@searchACourseRequest").then((res) => {
+      cy.log(JSON.stringify(res.body));
+      expect(res.status).to.eq(200);
+      expect(res.body).to.have.property("id");
+      expect(res.body).to.have.property("title");
+    });
+  });
+
+  it("Delete created ourse", () => {
+    cy.request({
+      method: "DELETE",
+      url: "/" + "/api/courses/" + courseId,
+    }).as("deleteCourseRequest");
+    cy.get("@deleteCourseRequest").then((res) => {
+      cy.log(JSON.stringify(res.body));
+      expect(res.status).to.eq(204);
+    });
+  });
+
+  it("Get All Courses", () => {
+    cy.request({
+      method: "GET",
+      url: "/" + "/api/courses",
+    }).as("searchAllCoursesRequest");
+    cy.get("@searchAllCoursesRequest").then((res) => {
+      cy.log(JSON.stringify(res.body));
+      expect(res.status).to.eq(200);
+      expect(res.body.data[0]).to.have.property("id");
+      expect(res.body.data[0]).to.have.property("title");
     });
   });
 });
