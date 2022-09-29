@@ -10,7 +10,7 @@
     "username": "ay@mail.com",
     "password": "pass1234"
   },
-  "baseUrl": "http://tawdry-rule.surge.sh/",
+  "baseUrl" : "https://notification-service.ishchoolapi.xyz",
 
   "defaultCommandTimeout": 30000,
   "pageLoadTimeout": 50000
