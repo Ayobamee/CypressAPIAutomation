@@ -12,10 +12,11 @@ describe("Quales Course Management Regression API Test suite", () => {
     return result;
   };
   let courseId = "";
+  const path = "/api/courses/";
   it("Create a Course", () => {
     cy.request({
       method: "POST",
-      url: "/" + "/api/courses/",
+      url: "/" + path,
       body: {
         title: "Course Automation" + randomChar(4),
         categoryId: 2,
@@ -39,7 +40,7 @@ describe("Quales Course Management Regression API Test suite", () => {
   it("Get a  Course", () => {
     cy.request({
       method: "GET",
-      url: "/" + "/api/courses/" + courseId,
+      url: "/" + path + courseId,
     }).as("searchACourseRequest");
     cy.get("@searchACourseRequest").then((res) => {
       cy.log(JSON.stringify(res.body));
@@ -52,7 +53,7 @@ describe("Quales Course Management Regression API Test suite", () => {
   it("Delete a created course", () => {
     cy.request({
       method: "DELETE",
-      url: "/" + "/api/courses/" + courseId,
+      url: "/" + path + courseId,
     }).as("deleteACourseRequest");
     cy.get("@deleteACourseRequest").then((res) => {
       cy.log(JSON.stringify(res.body));
@@ -63,7 +64,7 @@ describe("Quales Course Management Regression API Test suite", () => {
   it("Get All Courses", () => {
     cy.request({
       method: "GET",
-      url: "/" + "/api/courses",
+      url: "/" + path,
     }).as("searchAllCoursesRequest");
     cy.get("@searchAllCoursesRequest").then((res) => {
       cy.log(JSON.stringify(res.body));
