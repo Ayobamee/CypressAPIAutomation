@@ -13,6 +13,7 @@ describe("Quales Course Management Regression API Test suite", () => {
   };
   let courseId = "";
   const path = "/api/courses/";
+ 
   it("Creates a Course", () => {
     cy.request({
       method: "POST",
@@ -28,12 +29,13 @@ describe("Quales Course Management Regression API Test suite", () => {
       },
     }).as("createACourseRequest");
     cy.get("@createACourseRequest").then((res) => {
+      const responseBody = res.body;
       cy.log(JSON.stringify(res.body));
       expect(res.status).to.eq(200);
       courseId = res.body.id;
       cy.log(JSON.stringify(courseId));
-      expect(res.body).to.have.property("id");
-      expect(res.body).to.have.property("title");
+      expect(responseBody).to.have.property("id");
+      expect(responseBody).to.have.property("title");
     });
   });
 
@@ -43,10 +45,11 @@ describe("Quales Course Management Regression API Test suite", () => {
       url: "/" + path + courseId,
     }).as("searchACourseRequest");
     cy.get("@searchACourseRequest").then((res) => {
+      const responseBody = res.body;
       cy.log(JSON.stringify(res.body));
       expect(res.status).to.eq(200);
-      expect(res.body).to.have.property("id");
-      expect(res.body).to.have.property("title");
+      expect(responseBody).to.have.property("id");
+      expect(responseBody).to.have.property("title");
     });
   });
 
@@ -67,10 +70,11 @@ describe("Quales Course Management Regression API Test suite", () => {
       url: "/" + path,
     }).as("searchAllCoursesRequest");
     cy.get("@searchAllCoursesRequest").then((res) => {
+      const responseBody = res.body;
       cy.log(JSON.stringify(res.body));
       expect(res.status).to.eq(200);
-      expect(res.body.data[0]).to.have.property("id");
-      expect(res.body.data[0]).to.have.property("title");
+      expect(responseBody.data[0]).to.have.property("id");
+      expect(responseBody.data[0]).to.have.property("title");
     });
   });
 });
