@@ -25,3 +25,5 @@
 
 //import postgreSQL from 'cypress-postgresql';
 //postgreSQL.loadDBCommands();
+
+import "cypress-plugin-api";
